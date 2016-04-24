@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core';
 import {ANGULAR2_GOOGLE_MAPS_DIRECTIVES} from 'angular2-google-maps/core';
-import {  } from 'module';
+import { AppService } from './app.service';
 
 @Component({
   selector: 'my-map',

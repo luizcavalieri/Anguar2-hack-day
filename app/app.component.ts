@@ -1,6 +1,6 @@
     import {Component} from 'angular2/core';
     import { AppService } from './app.service';
-    import { Location } from './city';
+    //import { Location } from './city';
     import { CityDetailComponent } from './city-detail.component';
     
     @Component({
@@ -55,12 +55,17 @@
                 }
             `],
         template:`
-                <h2>My Cities</h2>
-                <select (change)="onSelect(city)">
-                    <option *ngFor="#city of cities" [value]="city.City">{{city.City}}<option>
-                </select>
                 <h2>{{title}}</h2>
-                <my-city-detail [city]="selectedCity"> </my-city-detail>
+                <my-city-detail [city]="selectedCity"> </my-city-detail>                
+                <h2>My Cities</h2>
+                 <ul class="cities">
+                    <li *ngFor="#city of cities"
+                        [class.selected]="city === selectedCity"
+                        (click)="onSelect(city)">
+                        <span class="badge">{{city.City}}</span> {{city.Temperature}} | {{city.Humidity}} | {{city.Longitude}} | {{city.Latitude}}
+                    </li>
+                </ul>
+                
                 
                 `,
         providers: [AppService]
@@ -87,15 +92,12 @@
                 
         onSelect(city: Location) { 
             this.selectedCity = city;
-            console.log(city.City); 
+            console.log(this.selectedCity); 
         }        
         
      }
      
-    //  <ul class="cities">
-    //                     <li *ngFor="#city of cities"
-    //                         [class.selected]="city === selectedCity"
-    //                         (click)="onSelect(city)">
-    //                         <span class="badge">{{city.City}}</span> {{city.Temperature}} | {{city.Humidity}} | {{city.Longitude}} | {{city.Latitude}}
-    //                     </li>
-    //                 </ul>
+    
+                // <select (change)="onSelect(city)">
+                //     <option *ngFor="#city of cities" [value]="city.City">{{city.City}}<option>
+                // </select>

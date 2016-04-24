@@ -1,7 +1,7 @@
 import { Http } from 'angular2/http';
 import {Injectable } from 'angular2/core';
 import { Observable } from 'rxjs/rx';
-import {City} from './city';
+import {Location} from './city';
 
 
 import 'rxjs/add/operator/map';
