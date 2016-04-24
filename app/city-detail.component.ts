@@ -1,5 +1,7 @@
 import {Component, Input} from 'angular2/core';
 
+import { AppComponent } from './app.component';
+
 import {Location} from './city';
 
 @Component({
