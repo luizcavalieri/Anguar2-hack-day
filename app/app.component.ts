@@ -65,8 +65,6 @@
                         <span class="badge">{{city.City}}</span> {{city.Temperature}} | {{city.Humidity}} | {{city.Longitude}} | {{city.Latitude}}
                     </li>
                 </ul>
-                
-                
                 `,
         providers: [AppService]
     })
