@@ -1,6 +1,6 @@
     import {Component} from 'angular2/core';
     import { AppService } from './app.service';
-    //import { Location } from './city';
+    import { Location } from './city';
     import { CityDetailComponent } from './city-detail.component';
     
     @Component({
